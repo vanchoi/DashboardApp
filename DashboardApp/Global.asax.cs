@@ -5,15 +5,17 @@ using System.Web.Routing;
 
 namespace DashboardApp
 {
-  public class MvcApplication : HttpApplication
-  {
-    protected void Application_Start()
+    public class MvcApplication : HttpApplication
     {
-      AreaRegistration.RegisterAllAreas();
+        protected void Application_Start()
+        {
+            BundleTable.EnableOptimizations = true;
 
-      FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-      RouteConfig.RegisterRoutes(RouteTable.Routes);
-      BundleConfig.RegisterBundles(BundleTable.Bundles);
+            AreaRegistration.RegisterAllAreas();
+
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
+        }
     }
-  }
 }
